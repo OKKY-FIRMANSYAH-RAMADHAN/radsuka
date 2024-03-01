@@ -73,7 +73,7 @@
                                                     <td>Hasil Rontgen</td>
                                                     <td>
                                                         @foreach (explode(',', $rontgen[0]->foto_rontgen) as $image)
-                                                            <img width="150" src="{{ asset('storage/images/' . trim($image)) }}" alt="Image">
+                                                            <img width="150" src="{{ asset('images/' . trim($image)) }}" alt="Image">
                                                         @endforeach
                                                     </td>
                                                 </tr>

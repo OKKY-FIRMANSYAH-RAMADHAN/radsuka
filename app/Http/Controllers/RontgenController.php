@@ -38,7 +38,7 @@ class RontgenController extends Controller
             if ($request->hasFile('images')) {
                 foreach ($request->file('images') as $image) {
                     $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
-                    $image->storeAs('public/images', $imageName);
+                    $image->move(public_path('images'), $imageName);
                     $foto[] = $imageName;
                 }
             }
@@ -62,7 +62,7 @@ class RontgenController extends Controller
             if ($request->hasFile('images')) {
                 foreach ($request->file('images') as $image) {
                     $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
-                    $image->storeAs('public/images', $imageName);
+                    $image->move(public_path('images'), $imageName);
                     $foto[] = $imageName;
                 }
                 $pemeriksaan->foto_rontgen = implode(',', $foto);
